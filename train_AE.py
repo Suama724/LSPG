@@ -51,5 +51,5 @@ def train_AE():
     
     
 if __name__ == '__main__':
-    #get_dataset()
-    train_AE()
+    get_dataset()
+    #train_AE()

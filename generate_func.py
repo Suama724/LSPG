@@ -8,14 +8,9 @@ from net.AE import load_model
 
 from renew_gp.engine import EvolutionEngine
 from net.AE import load_model
-from pflacco_v1.sampling import create_initial_sample
+from utils.create_initial_sample import create_initial_sample
 from config import config_func_generator
 
-'''
-from gplearn_final_AE_ray_best_ela.genetic import SymbolicRegressor
-from pflacco_v1.sampling import create_initial_sample
-from config import config_func_generator
-'''
 
 class Pipeline:
     def __init__(self, cfg):

@@ -57,7 +57,9 @@ def bbob_asy_transform(x, beta):
     y = np.copy(x)
     idx = x > 0
     lin_space = np.linspace(0, 1, dim)
-    exponent = 1.0 + beta * lin_space * np.sqrt(x)
+    safe_sqrt = np.zeros_like(x)
+    np.sqrt(x, where=idx, out=safe_sqrt)
+    exponent = 1.0 + beta * lin_space * safe_sqrt
     y[idx] = x[idx] ** exponent[idx]
     return y
 

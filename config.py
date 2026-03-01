@@ -12,11 +12,11 @@ DATASET_USED_TO_TRAIN_AE = '5D_2026_02_26_104537'
 # 选定用于采样潜空间的AE
 AE_SUIT_USED_TO_SAMPLE_POINTS = '5D_2026_02_26_110633'
 # 选定进行Sample的数据集
-DATASET_USED_TO_SAMPLE = '5D_2026_02_26_104537'
+DATASET_USED_TO_SAMPLE = '3D_2026_02_26_162706'
 
 # === Function Generation ===
 # 选定进行Generate Function的sample points
-SAMPLE_POINTS_USED_TO_GENERATE_FUNCTION = '2026_02_26_120027'
+SAMPLE_POINTS_USED_TO_GENERATE_FUNCTION = '2026_02_26_163412'
 # 选定进行Generate Function的AE
 AE_SUIT_USED_TO_GENERATE_FUNCTION = '5D_2026_02_26_110633'
 
@@ -33,8 +33,8 @@ config_AE = {
 
 config_gen_BBOB_dataset = {
     'output_dir': os.path.join(ARTIFACTS_DIR, 'datasets'),
-    'instance_num': 20,
-    'dim': 5,
+    'instance_num': 270,
+    'dim': 100,
     'upperbound': 5, # 别改
     'suit': 'bbob', # 两个选择: bbob 或 bbob_noise
     'difficulty': 'difficult',
@@ -75,7 +75,7 @@ config_latent_space_sampler = {
 
 config_func_generator = {
     'seed': 42,
-    'dim': 5,
+    'dim': 50,
     'bound': 5,
     'num_ela_feats': 21,
     'model_path': os.path.join(ARTIFACTS_DIR, 'models', AE_SUIT_USED_TO_GENERATE_FUNCTION, 'autoencoder_best.pth'),
@@ -84,7 +84,7 @@ config_func_generator = {
     'save_path': os.path.join(ARTIFACTS_DIR, 'generated_functions'),
 
     # configs for gp process
-    'population_size': 50,
-    'generation': 10,
-    'n_jobs': 2
+    'population_size': 300,
+    'generation': 20,
+    'n_jobs': -1
 }

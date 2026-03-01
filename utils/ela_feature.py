@@ -1,29 +1,41 @@
-from pflacco_v1.classical_ela_features \
-import calculate_ela_meta, calculate_ela_conv, calculate_ela_distribution,calculate_information_content
+"""
+- problem需具 .eval(x)
+- 内部对 convexity 传 problem.eval; meta/ic/dist 使用归一化后的 Ys
+"""
+from .classical_ela_feature import (
+    _validate_and_convert_to_ndarray,
+    calculate_ela_meta,
+    calculate_ela_conv,
+    calculate_ela_distribution,
+    calculate_information_content,
+)
 import math
 import numpy as np
-
-'''
-自己进行的更改:
-1. calculate_ela_conv:
-    ela_conv_nsample从200降到50
-'''
-
 
 
 def get_ela_feature(problem, Xs, Ys, random_state):
     total_calculation_time_cost = 0
     total_calculation_fes = 0
     all_features = []
-    
-    # 计算下列特征时 对Y进行归一化
-    # 为了解决problem.eval无法归一化
-    # 传入原始的Y来进行归一化操作
-    # convexity features 4 features
-    ela_conv_full_results = calculate_ela_conv(Xs, Ys, problem.eval, ela_conv_nsample= 50 , seed=random_state)
+
+    # 入口处只做一次类型校验并转为 ndarray
+    X, y = _validate_and_convert_to_ndarray(Xs, Ys)
+    y_min = float(np.min(y))
+    y_max = float(np.max(y))
+    y_span = y_max - y_min
+    if y_span <= 0:
+        y_span = 1.0
+
+    ela_conv_full_results = calculate_ela_conv(
+        X, y, problem.eval,
+        ela_conv_nsample=200,
+        seed=random_state,
+        y_min=y_min,
+        y_max=y_max,
+        y_span=y_span,
+    )
     total_calculation_fes += ela_conv_full_results['ela_conv.additional_function_eval']
     total_calculation_time_cost += ela_conv_full_results['ela_conv.costs_runtime']
-    # print('convexity features time cost: {},  consumed fes: {}'.format(ela_conv_full_results['ela_conv.costs_runtime'], ela_conv_full_results['ela_conv.additional_function_eval']))
     for k in ela_conv_full_results.keys():
         if (k != 'ela_conv.additional_function_eval') and (k != 'ela_conv.costs_runtime'):
             v = ela_conv_full_results[k]
@@ -32,15 +44,11 @@ def get_ela_feature(problem, Xs, Ys, random_state):
             elif math.isinf(v):
                 v = 1.
             all_features.append(v)
-        # elif k == 'ela_conv.costs_runtime':
-            # print("conv feature costs : ",ela_conv_full_results[k])
-        
-        
-    # 计算下列特征时 对Y进行归一化
-    # 对目标值进行归一化
-    Ys = (Ys - Ys.min()) / (Ys.max() - Ys.min())
+
+    y_norm = (y - y_min) / y_span
+
     # meta features 9 features
-    ela_meta_full_results = calculate_ela_meta(Xs,Ys)
+    ela_meta_full_results = calculate_ela_meta(X, y_norm)
     total_calculation_time_cost += ela_meta_full_results['ela_meta.costs_runtime']
     # print('meta features time cost: {},  consumed fes: {}'.format(ela_meta_full_results['ela_meta.costs_runtime'], 0))
     for k in ela_meta_full_results.keys():
@@ -57,7 +65,7 @@ def get_ela_feature(problem, Xs, Ys, random_state):
     # print("check meta" ,len(all_features))
     
     #information content 5 features 
-    ela_ic_full_results = calculate_information_content(Xs,Ys,seed=random_state)
+    ela_ic_full_results = calculate_information_content(X, y_norm, seed=random_state)
     total_calculation_time_cost += ela_ic_full_results['ic.costs_runtime']
     # print('ic features time cost: {},  consumed fes: {}'.format(ela_ic_full_results['ic.costs_runtime'], 0))
     for k in ela_ic_full_results.keys():
@@ -78,7 +86,7 @@ def get_ela_feature(problem, Xs, Ys, random_state):
 
 
     # distributional features 3 features
-    ela_dis_full_results = calculate_ela_distribution(Xs,Ys)
+    ela_dis_full_results = calculate_ela_distribution(X, y_norm)
     total_calculation_time_cost += ela_dis_full_results['ela_distr.costs_runtime']
     # print('distributional features time cost: {},  consumed fes: {}'.format(ela_dis_full_results['ela_distr.costs_runtime'], 0))
     for k in ela_dis_full_results.keys():

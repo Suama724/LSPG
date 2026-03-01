@@ -7,8 +7,8 @@ import pandas as pd
 
 from problem_form.bbob_utils import gen_rotate_matrix_qr
 from problem_form.bbob_problem import *
-from pflacco_v1.sampling import create_initial_sample
-from pflacco_v1.selected_ela_feature import get_ela_feature
+from utils.create_initial_sample import create_initial_sample
+from utils.ela_feature import get_ela_feature
 
 
 def build_instance(meta_func_id,

@@ -22,10 +22,12 @@ class BasicProblem:
             x.reshape(-1, x.shape[-1])
         
         y = self.func(x)
-        #y = np.atleast_1d()
-        time_end=time.perf_counter()
+        y = np.atleast_1d(np.asarray(y))
+        time_end = time.perf_counter()
         self.time_cost += (time_end - time_start) * 1000
-        return y if y.shape[0] > 1 else y[0]
+        if y.size == 0:
+            return np.nan
+        return y.flat[0] if y.size == 1 else y
 
     def func(self, x):
         raise NotImplementedError        

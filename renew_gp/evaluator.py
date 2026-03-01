@@ -3,7 +3,7 @@ import torch
 import math
 from copy import deepcopy 
 
-from .ela_feature import get_ela_feature
+from utils.ela_feature import get_ela_feature
 from .structure import ExpressionTree
 from net.AE import encode_ela_feats, AutoEncoder
 
