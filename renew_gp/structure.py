@@ -186,7 +186,7 @@ class ExpressionTree:
             else:
                 if curr_dim > max_dim:
                     #截断
-                    aligned_args.append(arg[:max_dim, ""])
+                    aligned_args.append(arg[:max_dim, :])
                 else:
                     # 循环填充
                     repeats = int(np.ceil(max_dim / curr_dim))

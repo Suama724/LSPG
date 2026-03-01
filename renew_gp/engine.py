@@ -54,9 +54,12 @@ def _evolve_and_evaluate_batch(
         contenders = [parents[i] for i in contenders_indices]
         winner = min(contenders, key=lambda x: x.raw_fitness_ if x.fitness_ is not None else x.raw_fitness_)
         return winner        
-    
+
+    evolution_ops_time_total = 0.0
+
     for _ in range(n_programs):
         child = None
+        t_evolution_start = time.perf_counter()
 
         if parents is None:
             child = ExpressionTree.create_random_tree(
@@ -83,6 +86,7 @@ def _evolve_and_evaluate_batch(
             else: 
                 child = deepcopy(parent)
 
+        evolution_ops_time_total += time.perf_counter() - t_evolution_start
         evaluator.calculate_fitness(child)
 
         if child.raw_fitness_ >= evaluator.PENALTY_VALUE:
@@ -90,7 +94,9 @@ def _evolve_and_evaluate_batch(
         else:
             child.fitness_ = child.raw_fitness_ + parsimony_coefficient * len(child)
         programs.append(child)
-    return programs, performence_stats
+
+    batch_stats = {**evaluator.perfomence_stats, 'evolution_ops_time': evolution_ops_time_total}
+    return programs, batch_stats
 
 
 class EvolutionEngine:
@@ -174,7 +180,7 @@ class EvolutionEngine:
             
             population = []
             
-            global_stats = {'execute_time': 0.0, 'ela_time': 0.0, 'encode_time': 0.0, 'cnt': 0}
+            global_stats = {'execute_time': 0.0, 'ela_time': 0.0, 'encode_time': 0.0, 'evolution_ops_time': 0.0, 'cnt': 0}
 
             for batch_programs, batch_stats in results_raw:
                 population.extend(batch_programs)
@@ -182,6 +188,7 @@ class EvolutionEngine:
                 global_stats['execute_time'] += batch_stats['execute_time']
                 global_stats['ela_time']  += batch_stats['ela_time']
                 global_stats['encode_time'] += batch_stats['encode_time']
+                global_stats['evolution_ops_time'] += batch_stats.get('evolution_ops_time', 0.0)
                 global_stats['cnt']     += batch_stats['cnt']
 
             if global_stats['cnt'] > 0:
@@ -189,12 +196,16 @@ class EvolutionEngine:
                 avg_exec = (global_stats['execute_time'] / count) * 1000 
                 avg_ela  = (global_stats['ela_time'] / count) * 1000   
                 avg_model = (global_stats['encode_time'] / count) * 1000 
-                
+                total_evolution_s = global_stats['evolution_ops_time']
+                total_ela_s = global_stats['ela_time']
+                total_exec_s = global_stats['execute_time']
+                total_encode_s = global_stats['encode_time']
                 print(f"--- [Perf Stats] Gen {gen} ---")
-                print(f"    Avg Tree Exec : {avg_exec:.4f} ms")
-                print(f"    Avg ELA Calc  : {avg_ela:.4f} ms")
-                print(f"    Avg AE Model  : {avg_model:.4f} ms")
-                print(f"    Total Processed: {count}")
+                print(f"    Avg Tree Exec : {avg_exec:.4f} ms  (total {total_exec_s:.3f} s)")
+                print(f"    Avg ELA Calc  : {avg_ela:.4f} ms  (total {total_ela_s:.3f} s)")
+                print(f"    Avg AE Model  : {avg_model:.4f} ms  (total {total_encode_s:.3f} s)")
+                print(f"    Evolution ops : total {total_evolution_s:.3f} s  (tournament+crossover/mutation/init)")
+                print(f"    Total Processed: {count}  (ELA evaluations this gen: {count})")
                 print(f"-----------------------------")
 
             valid_pop = [p for p in population if p.raw_fitness_ < 1e4]
@@ -222,12 +233,21 @@ class EvolutionEngine:
             avg_fitness = np.mean([p.raw_fitness_ for p in valid_pop]) if valid_pop else np.inf
             duration = time.time() - start_time
             
+            time_breakdown = {}
+            if global_stats['cnt'] > 0:
+                time_breakdown = {
+                    'evolution_ops_s': global_stats['evolution_ops_time'],
+                    'execute_s': global_stats['execute_time'],
+                    'ela_s': global_stats['ela_time'],
+                    'encode_s': global_stats['encode_time'],
+                }
             self.history.append({
                 'gen': gen,
                 'best_fitness': self.best_program.raw_fitness_ if self.best_program else np.inf,
                 'avg_fitness': avg_fitness,
                 'valid_count': len(valid_pop),
-                'time': duration
+                'time': duration,
+                'time_breakdown': time_breakdown,
             })                    
 
             if self.verbose:
