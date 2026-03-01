@@ -75,7 +75,7 @@ config_latent_space_sampler = {
 
 config_func_generator = {
     'seed': 42,
-    'dim': 50,
+    'dim': 10,
     'bound': 5,
     'num_ela_feats': 21,
     'model_path': os.path.join(ARTIFACTS_DIR, 'models', AE_SUIT_USED_TO_GENERATE_FUNCTION, 'autoencoder_best.pth'),
@@ -86,5 +86,5 @@ config_func_generator = {
     # configs for gp process
     'population_size': 300,
     'generation': 20,
-    'n_jobs': -1
+    'n_jobs': 2
 }
