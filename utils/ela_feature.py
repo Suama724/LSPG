@@ -13,7 +13,7 @@ import math
 import numpy as np
 
 
-def get_ela_feature(problem, Xs, Ys, random_state):
+def get_ela_feature(problem, Xs, Ys, random_state, ela_conv_nsample=200):
     total_calculation_time_cost = 0
     total_calculation_fes = 0
     all_features = []
@@ -28,7 +28,7 @@ def get_ela_feature(problem, Xs, Ys, random_state):
 
     ela_conv_full_results = calculate_ela_conv(
         X, y, problem.eval,
-        ela_conv_nsample=200,
+        ela_conv_nsample=ela_conv_nsample,
         seed=random_state,
         y_min=y_min,
         y_max=y_max,

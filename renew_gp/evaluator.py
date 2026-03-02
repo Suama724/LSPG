@@ -93,7 +93,8 @@ class FitnessEvaluator:
                     problem=wrapper,
                     Xs=X_input,
                     Ys=y_pred,
-                    random_state=42
+                    random_state=42,
+                    ela_conv_nsample=50,
                 )
 
                 local_ela_time += time.perf_counter() - t_start

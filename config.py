@@ -75,7 +75,7 @@ config_latent_space_sampler = {
 
 config_func_generator = {
     'seed': 42,
-    'dim': 10,
+    'dim': 20,
     'bound': 5,
     'num_ela_feats': 21,
     'model_path': os.path.join(ARTIFACTS_DIR, 'models', AE_SUIT_USED_TO_GENERATE_FUNCTION, 'autoencoder_best.pth'),
@@ -83,8 +83,14 @@ config_func_generator = {
     'sample_path': os.path.join(ARTIFACTS_DIR, 'latent_samples', SAMPLE_POINTS_USED_TO_GENERATE_FUNCTION, 'results.npy'), 
     'save_path': os.path.join(ARTIFACTS_DIR, 'generated_functions'),
 
+    # ELA 评估用 X 的样本数
+    'X_sampling_num': 6000,
+
     # configs for gp process
-    'population_size': 300,
+    'population_size': 100,
     'generation': 20,
-    'n_jobs': 2
+    'n_jobs': 2,
+
+    # 仅对指定点生成：None 或 [] 表示遍历全部；否则为下标列表，如 [0, 2, 5]
+    'generate_at_indices': [0],
 }

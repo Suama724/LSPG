@@ -34,6 +34,7 @@ class Pipeline:
         self.population_size = cfg['population_size']
         self.generation = cfg['generation']
         self.n_jobs = cfg['n_jobs']
+        self.generate_at_indices = cfg.get('generate_at_indices') or None  # None/[] = 全部；否则只生成指定下标
         #self.n_jobs = 1
 
         self.model = load_model(self.model_path, ela_feats_num=self.num_ela_feats, device='cpu')
@@ -48,7 +49,7 @@ class Pipeline:
         print("Initializing Test Data...")
         self.dataset_dict = {}
         target_dim = self.dim
-        n_samples = 250 * target_dim
+        n_samples = cfg['X_sampling_num']
         X = np.array(create_initial_sample(
             dim=target_dim, n=n_samples, sample_type='lhs',
             lower_bound=-1 * self.bound, upper_bound=self.bound,
@@ -61,7 +62,8 @@ class Pipeline:
         return self.all_sample_points[func_id]
         
     def run_batch(self):
-        for func_id in range(0, len(self.all_sample_points)):
+        indices = self.generate_at_indices if self.generate_at_indices else range(len(self.all_sample_points))
+        for func_id in indices:
             try:
                 self.solve(func_id)
             except Exception as e:
@@ -70,6 +72,11 @@ class Pipeline:
     
     def solve(self, func_id):
         print(f"Now generating the No.{func_id} problem.")
+
+        log_path = os.path.join(self.save_path, "evolution_log.txt")
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(f"Now generating the No.{func_id} problem.\n")
+            f.flush()
 
         latent_coords = self.get_latent_coord(func_id)
 
@@ -86,7 +93,8 @@ class Pipeline:
             model=self.model,
             scaler=self.scaler,
             target_coords=latent_coords,
-            n_feats=self.dim
+            n_feats=self.dim,
+            log_path=log_path,
         )
         
         self.save_single_func(func_id, best_program, history)

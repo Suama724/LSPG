@@ -135,8 +135,18 @@ class EvolutionEngine:
         self.best_program = None
         self.history = []
 
-    def fit(self, dataset_dict, model, scaler, target_coords, n_feats):
+    def fit(self, dataset_dict, model, scaler, target_coords, n_feats, log_path=None):
+        log_file = None
+        if log_path:
+            log_file = open(log_path, 'a', encoding='utf-8')
+
+        def _log(s):
+            if log_file:
+                log_file.write(s + '\n')
+                log_file.flush()
+
         print("Uploading data to ray obj store...")
+        _log("Uploading data to ray obj store...")
         dataset_ref = ray.put(dataset_dict)
         model_ref = ray.put(model)
         scaler_ref = ray.put(scaler)
@@ -149,6 +159,7 @@ class EvolutionEngine:
         consecutive_failures = 0
 
         print(f"Starting evolution: {self.population_size} individuals, {self.generations} generations.")
+        _log(f"Starting evolution: {self.population_size} individuals, {self.generations} generations.")
 
         for gen in range(self.generations):
             start_time = time.time()
@@ -209,30 +220,27 @@ class EvolutionEngine:
                 print(f"-----------------------------")
 
             valid_pop = [p for p in population if p.raw_fitness_ < 1e4]
+            duration = time.time() - start_time
+            avg_fitness = np.mean([p.raw_fitness_ for p in valid_pop]) if valid_pop else np.inf
+
             if not valid_pop:
                 consecutive_failures += 1
                 print(f'Gen {gen}: No valid individuals found')
                 if not parents:
                     raise RuntimeError("Failed to gen any valid individual in Gen 0.")
-                
                 if consecutive_failures >= 3:
                     print("Consecutive failures detected. Restart.")
                     parents = None
                     population = None
                     consecutive_failures = 0
-                    continue
-                
-                population = parents
-
-            else: 
+                else:
+                    population = parents
+            else:
                 consecutive_failures = 0
-                
                 current_best = min(valid_pop, key=lambda x: x.raw_fitness_)
                 if self.best_program is None or current_best.raw_fitness_ < self.best_program.raw_fitness_:
                     self.best_program = deepcopy(current_best)
-            avg_fitness = np.mean([p.raw_fitness_ for p in valid_pop]) if valid_pop else np.inf
-            duration = time.time() - start_time
-            
+
             time_breakdown = {}
             if global_stats['cnt'] > 0:
                 time_breakdown = {
@@ -248,7 +256,35 @@ class EvolutionEngine:
                 'valid_count': len(valid_pop),
                 'time': duration,
                 'time_breakdown': time_breakdown,
-            })                    
+            })
+
+            if log_file:
+                lines = [f"---------- Gen {gen} ----------"]
+                if global_stats['cnt'] > 0:
+                    c = global_stats['cnt']
+                    lines.append(
+                        f"  [Perf] Tree Exec: total {global_stats['execute_time']:.3f} s (avg {(global_stats['execute_time']/c)*1000:.4f} ms) | "
+                        f"ELA: total {global_stats['ela_time']:.3f} s (avg {(global_stats['ela_time']/c)*1000:.4f} ms) | "
+                        f"AE Model: total {global_stats['encode_time']:.3f} s (avg {(global_stats['encode_time']/c)*1000:.4f} ms) | "
+                        f"Evolution ops: {global_stats['evolution_ops_time']:.3f} s"
+                    )
+                    lines.append(f"  Processed: {c} (ELA evaluations this gen: {c}). Totals = sum over {n_jobs} workers; wall clock ~ total/n_jobs.")
+                else:
+                    lines.append("  [Perf] (no stats this gen)")
+                lines.append(
+                    f"  Best: {self.best_program.raw_fitness_:.4f} | Avg: {avg_fitness:.4f} | "
+                    f"Valid: {len(valid_pop)}/{self.population_size} | Time: {duration:.2f} s"
+                )
+                if self.best_program:
+                    lines.append(f"  Best Expr: {self.best_program}")
+                    lines.append(f"  Coord: {self.best_program.coordi_2D}")
+                    lines.append(f"  Target Coord: {target_coords}")
+                if not valid_pop:
+                    lines.append("  (No valid individuals this gen)")
+                _log('\n'.join(lines))
+
+            if consecutive_failures >= 3:
+                continue
 
             if self.verbose:
                 print(f"Gen {gen}: Best {self.best_program.raw_fitness_:.4f} | Avg {avg_fitness:.4f} | Valid {len(valid_pop)}/{self.population_size} | Time {duration:.2f}s")
@@ -256,7 +292,9 @@ class EvolutionEngine:
                     print(f"    Best Expr: {self.best_program}")
                     print(f"    Coord: {self.best_program.coordi_2D}")
                     print(f"    Target Coord: {target_coords}")
-            
+
             parents = population
 
+        if log_file:
+            log_file.close()
         return self.best_program, self.history
