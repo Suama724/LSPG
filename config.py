@@ -94,3 +94,20 @@ config_func_generator = {
     # 仅对指定点生成：None 或 [] 表示遍历全部；否则为下标列表，如 [0, 2, 5]
     'generate_at_indices': [0],
 }
+
+
+config_slice_ela_gen = {
+    'save_path': os.path.join(ARTIFACTS_DIR, 'sliced_functions_from_LSP'),
+    'model_path': os.path.join(ARTIFACTS_DIR, 'models', AE_SUIT_USED_TO_GENERATE_FUNCTION, 'autoencoder_best.pth'),
+    'scaler_path': os.path.join(ARTIFACTS_DIR, 'models', AE_SUIT_USED_TO_GENERATE_FUNCTION, 'scaler.pkl'),
+    'num_ela_feats': 21,
+    'bound': 5.0,
+    'seed': 42,
+    'X_sampling_num_ela': 500,
+    'X_sampling_num_ga': 500,
+    'population_size': 100,
+    'generation': 20,
+    'n_jobs': 2,
+    'slice_len': 50,
+    'fill_value': 0.0,
+}
