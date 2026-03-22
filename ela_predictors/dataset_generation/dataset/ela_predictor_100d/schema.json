@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "description": "ELA predictor dataset schema (ela not persisted)",
+  "fixed_x_file": "X.npy",
+  "chunk_fields": {
+    "y": "float32[B, n_eval]",
+    "z2d": "float32[B, 2]",
+    "seed": "int64[B]",
+    "func_kind": "uint8[B]"
+  },
+  "manifest_fields": [
+    "global_idx",
+    "chunk_id",
+    "local_idx",
+    "chunk_file",
+    "seed",
+    "func_kind",
+    "sample_id",
+    "task_seed",
+    "base_meta_func_id",
+    "sub_meta_func_ids",
+    "sub_seeds",
+    "weights",
+    "agg",
+    "ela_cost_fes",
+    "ela_cost_time",
+    "pipeline_time_sec"
+  ]
+}

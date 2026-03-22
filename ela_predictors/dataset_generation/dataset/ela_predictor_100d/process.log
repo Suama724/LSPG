@@ -1,0 +1,299 @@
+2026-03-17 13:24:25 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 13:24:25 [Init] resume=True, use_ray=True, workers=4
+2026-03-17 13:24:25 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 13:24:25 [Init] total_tasks=46000, completed_before_resume=4000
+2026-03-17 13:24:28 [Ray] workers=4, inflight_cap=8
+2026-03-17 13:24:47 [Progress] done=200/46000, ok=200, fail=0, speed=10.56 task/s, eta_s=4337.9
+2026-03-17 13:25:01 [Progress] done=400/46000, ok=400, fail=0, speed=12.30 task/s, eta_s=3708.3
+2026-03-17 13:25:17 [Progress] done=600/46000, ok=600, fail=0, speed=12.38 task/s, eta_s=3667.9
+2026-03-17 13:25:30 [Progress] done=800/46000, ok=800, fail=0, speed=12.90 task/s, eta_s=3505.0
+2026-03-17 13:25:44 [Progress] done=1000/46000, ok=1000, fail=0, speed=13.22 task/s, eta_s=3403.5
+2026-03-17 13:26:01 [Progress] done=1200/46000, ok=1200, fail=0, speed=13.03 task/s, eta_s=3438.9
+2026-03-17 13:26:15 [Progress] done=1400/46000, ok=1400, fail=0, speed=13.17 task/s, eta_s=3387.6
+2026-03-17 13:26:32 [Progress] done=1600/46000, ok=1600, fail=0, speed=12.96 task/s, eta_s=3425.3
+2026-03-17 13:26:46 [Progress] done=1800/46000, ok=1800, fail=0, speed=13.11 task/s, eta_s=3371.7
+2026-03-17 13:27:03 [Chunk] wrote=chunk_000002.npz, size=2000, chunk_id=2
+2026-03-17 13:27:03 [Progress] done=2000/46000, ok=2000, fail=0, speed=12.94 task/s, eta_s=3400.8
+2026-03-17 13:27:17 [Progress] done=2200/46000, ok=2200, fail=0, speed=13.02 task/s, eta_s=3363.5
+2026-03-17 13:27:35 [Progress] done=2400/46000, ok=2400, fail=0, speed=12.88 task/s, eta_s=3384.3
+2026-03-17 13:27:51 [Progress] done=2600/46000, ok=2600, fail=0, speed=12.84 task/s, eta_s=3380.0
+2026-03-17 13:28:10 [Progress] done=2800/46000, ok=2800, fail=0, speed=12.65 task/s, eta_s=3415.5
+2026-03-17 13:28:24 [Progress] done=3000/46000, ok=3000, fail=0, speed=12.74 task/s, eta_s=3375.2
+2026-03-17 13:28:38 [Progress] done=3200/46000, ok=3200, fail=0, speed=12.83 task/s, eta_s=3335.3
+2026-03-17 13:28:54 [Progress] done=3400/46000, ok=3400, fail=0, speed=12.78 task/s, eta_s=3332.7
+2026-03-17 13:29:08 [Progress] done=3600/46000, ok=3600, fail=0, speed=12.87 task/s, eta_s=3295.6
+2026-03-17 13:29:26 [Progress] done=3800/46000, ok=3800, fail=0, speed=12.79 task/s, eta_s=3300.7
+2026-03-17 13:29:40 [Chunk] wrote=chunk_000003.npz, size=2000, chunk_id=3
+2026-03-17 13:29:40 [Progress] done=4000/46000, ok=4000, fail=0, speed=12.85 task/s, eta_s=3268.7
+2026-03-17 13:29:57 [Progress] done=4200/46000, ok=4200, fail=0, speed=12.79 task/s, eta_s=3267.2
+2026-03-17 13:30:10 [Progress] done=4400/46000, ok=4400, fail=0, speed=12.86 task/s, eta_s=3234.1
+2026-03-17 13:30:27 [Progress] done=4600/46000, ok=4600, fail=0, speed=12.83 task/s, eta_s=3226.7
+2026-03-17 13:30:41 [Progress] done=4800/46000, ok=4800, fail=0, speed=12.89 task/s, eta_s=3197.1
+2026-03-17 13:30:54 [Progress] done=5000/46000, ok=5000, fail=0, speed=12.96 task/s, eta_s=3163.6
+2026-03-17 13:31:10 [Progress] done=5200/46000, ok=5200, fail=0, speed=12.94 task/s, eta_s=3152.9
+2026-03-17 13:31:24 [Progress] done=5400/46000, ok=5400, fail=0, speed=12.99 task/s, eta_s=3125.5
+2026-03-17 13:31:40 [Progress] done=5600/46000, ok=5600, fail=0, speed=12.98 task/s, eta_s=3112.8
+2026-03-17 13:31:53 [Progress] done=5800/46000, ok=5800, fail=0, speed=13.03 task/s, eta_s=3084.8
+2026-03-17 13:32:07 [Chunk] wrote=chunk_000004.npz, size=2000, chunk_id=4
+2026-03-17 13:32:07 [Progress] done=6000/46000, ok=6000, fail=0, speed=13.07 task/s, eta_s=3059.8
+2026-03-17 13:32:23 [Progress] done=6200/46000, ok=6200, fail=0, speed=13.06 task/s, eta_s=3048.0
+2026-03-17 13:32:37 [Progress] done=6400/46000, ok=6400, fail=0, speed=13.11 task/s, eta_s=3021.5
+2026-03-17 13:32:53 [Progress] done=6600/46000, ok=6600, fail=0, speed=13.08 task/s, eta_s=3011.3
+2026-03-17 13:33:07 [Progress] done=6800/46000, ok=6800, fail=0, speed=13.12 task/s, eta_s=2988.4
+2026-03-17 13:33:23 [Progress] done=7000/46000, ok=7000, fail=0, speed=13.10 task/s, eta_s=2977.6
+2026-03-17 13:33:36 [Progress] done=7200/46000, ok=7200, fail=0, speed=13.14 task/s, eta_s=2953.3
+2026-03-17 13:33:50 [Progress] done=7400/46000, ok=7400, fail=0, speed=13.17 task/s, eta_s=2931.3
+2026-03-17 13:34:06 [Progress] done=7600/46000, ok=7600, fail=0, speed=13.15 task/s, eta_s=2919.1
+2026-03-17 13:34:20 [Progress] done=7800/46000, ok=7800, fail=0, speed=13.19 task/s, eta_s=2897.1
+2026-03-17 13:34:36 [Chunk] wrote=chunk_000005.npz, size=2000, chunk_id=5
+2026-03-17 13:34:36 [Progress] done=8000/46000, ok=8000, fail=0, speed=13.17 task/s, eta_s=2885.9
+2026-03-17 13:34:50 [Progress] done=8200/46000, ok=8200, fail=0, speed=13.20 task/s, eta_s=2863.2
+2026-03-17 13:35:05 [Progress] done=8400/46000, ok=8400, fail=0, speed=13.20 task/s, eta_s=2849.5
+2026-03-17 13:35:19 [Progress] done=8600/46000, ok=8600, fail=0, speed=13.22 task/s, eta_s=2828.6
+2026-03-17 13:35:33 [Progress] done=8800/46000, ok=8800, fail=0, speed=13.24 task/s, eta_s=2809.5
+2026-03-17 13:35:49 [Progress] done=9000/46000, ok=9000, fail=0, speed=13.22 task/s, eta_s=2797.7
+2026-03-17 13:36:03 [Progress] done=9200/46000, ok=9200, fail=0, speed=13.25 task/s, eta_s=2777.5
+2026-03-17 13:36:19 [Progress] done=9400/46000, ok=9400, fail=0, speed=13.23 task/s, eta_s=2767.2
+2026-03-17 13:36:33 [Progress] done=9600/46000, ok=9600, fail=0, speed=13.25 task/s, eta_s=2747.8
+2026-03-17 13:36:50 [Progress] done=9800/46000, ok=9800, fail=0, speed=13.22 task/s, eta_s=2737.8
+2026-03-17 13:37:04 [Chunk] wrote=chunk_000006.npz, size=2000, chunk_id=6
+2026-03-17 13:37:04 [Progress] done=10000/46000, ok=10000, fail=0, speed=13.24 task/s, eta_s=2718.8
+2026-03-17 13:37:18 [Progress] done=10200/46000, ok=10200, fail=0, speed=13.26 task/s, eta_s=2699.5
+2026-03-17 13:37:34 [Progress] done=10400/46000, ok=10400, fail=0, speed=13.25 task/s, eta_s=2687.6
+2026-03-17 13:37:48 [Progress] done=10600/46000, ok=10600, fail=0, speed=13.26 task/s, eta_s=2669.0
+2026-03-17 13:38:04 [Progress] done=10800/46000, ok=10800, fail=0, speed=13.25 task/s, eta_s=2657.4
+2026-03-17 13:38:18 [Progress] done=11000/46000, ok=11000, fail=0, speed=13.27 task/s, eta_s=2638.5
+2026-03-17 13:38:34 [Progress] done=11200/46000, ok=11200, fail=0, speed=13.24 task/s, eta_s=2628.4
+2026-03-17 13:38:49 [Progress] done=11400/46000, ok=11400, fail=0, speed=13.25 task/s, eta_s=2611.9
+2026-03-17 13:39:06 [Progress] done=11600/46000, ok=11600, fail=0, speed=13.22 task/s, eta_s=2601.5
+2026-03-17 13:39:20 [Progress] done=11800/46000, ok=11800, fail=0, speed=13.24 task/s, eta_s=2583.9
+2026-03-17 13:39:35 [Chunk] wrote=chunk_000007.npz, size=2000, chunk_id=7
+2026-03-17 13:39:35 [Progress] done=12000/46000, ok=12000, fail=0, speed=13.24 task/s, eta_s=2568.8
+2026-03-17 17:29:43 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 17:29:43 [Init] resume=True, use_ray=True, workers=4
+2026-03-17 17:29:43 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:29:43 [Init] total_tasks=34000, completed_before_resume=16000
+2026-03-17 17:30:11 [Ray] workers=4, inflight_cap=8
+2026-03-17 17:30:44 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 17:30:44 [Init] resume=True, use_ray=True, workers=4
+2026-03-17 17:30:44 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:30:44 [Init] total_tasks=34000, completed_before_resume=16000
+2026-03-17 17:30:52 [Ray] workers=4, inflight_cap=8
+2026-03-17 17:32:02 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 17:32:02 [Init] resume=True, use_ray=True, workers=3
+2026-03-17 17:32:02 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:32:02 [Init] total_tasks=34000, completed_before_resume=16000
+2026-03-17 17:32:09 [Ray] workers=3, inflight_cap=6
+2026-03-17 17:34:48 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 17:34:48 [Init] resume=True, use_ray=True, workers=3
+2026-03-17 17:34:48 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:34:48 [Init] total_tasks=34000, completed_before_resume=16000
+2026-03-17 17:34:51 [Ray] workers=3, inflight_cap=6
+2026-03-17 17:35:12 [Progress] done=200/34000, ok=200, fail=0, speed=9.69 task/s, eta_s=3489.7
+2026-03-17 17:35:30 [Progress] done=400/34000, ok=400, fail=0, speed=10.33 task/s, eta_s=3253.5
+2026-03-17 17:35:51 [Progress] done=600/34000, ok=600, fail=0, speed=9.95 task/s, eta_s=3355.7
+2026-03-17 17:36:10 [Progress] done=800/34000, ok=800, fail=0, speed=10.19 task/s, eta_s=3259.4
+2026-03-17 17:36:30 [Progress] done=1000/34000, ok=1000, fail=0, speed=10.14 task/s, eta_s=3254.2
+2026-03-17 17:36:46 [Progress] done=1200/34000, ok=1200, fail=0, speed=10.41 task/s, eta_s=3151.7
+2026-03-17 17:37:07 [Progress] done=1400/34000, ok=1400, fail=0, speed=10.33 task/s, eta_s=3154.9
+2026-03-17 17:37:24 [Progress] done=1600/34000, ok=1600, fail=0, speed=10.46 task/s, eta_s=3096.2
+2026-03-17 17:37:43 [Progress] done=1800/34000, ok=1800, fail=0, speed=10.45 task/s, eta_s=3082.2
+2026-03-17 17:38:00 [Chunk] wrote=chunk_000008.npz, size=2000, chunk_id=8
+2026-03-17 17:38:00 [Progress] done=2000/34000, ok=2000, fail=0, speed=10.59 task/s, eta_s=3021.8
+2026-03-17 17:38:26 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 17:38:26 [Init] resume=True, use_ray=True, workers=4
+2026-03-17 17:38:26 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:38:26 [Init] total_tasks=32000, completed_before_resume=18000
+2026-03-17 17:38:29 [Ray] workers=4, inflight_cap=8
+2026-03-17 17:39:52 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 17:39:52 [Init] resume=True, use_ray=True, workers=3
+2026-03-17 17:39:52 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:39:53 [Init] total_tasks=32000, completed_before_resume=18000
+2026-03-17 17:39:56 [Ray] workers=3, inflight_cap=6
+2026-03-17 17:43:34 [Init] run_dir=dataset/ela_predictor_100d
+2026-03-17 17:43:34 [Init] resume=True, use_ray=True, workers=3
+2026-03-17 17:43:34 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:43:34 [Init] total_tasks=32000, completed_before_resume=18000
+2026-03-17 17:43:37 [Ray] workers=3, inflight_cap=6
+2026-03-17 17:46:28 [Init] run_dir=dataset\ela_predictor_100d
+2026-03-17 17:46:28 [Init] resume=True, use_ray=True, workers=3
+2026-03-17 17:46:28 [Init] fixed_X=loaded, shape=(230, 100)
+2026-03-17 17:46:28 [Init] total_tasks=32000, completed_before_resume=18000
+2026-03-17 17:46:41 [Ray] workers=3, inflight_cap=6
+2026-03-17 17:47:29 [Progress] done=200/32000, ok=200, fail=0, speed=4.20 task/s, eta_s=7564.9
+2026-03-17 17:47:47 [Progress] done=400/32000, ok=400, fail=0, speed=6.05 task/s, eta_s=5225.8
+2026-03-17 17:48:06 [Progress] done=600/32000, ok=600, fail=0, speed=7.06 task/s, eta_s=4447.1
+2026-03-17 17:48:26 [Progress] done=800/32000, ok=800, fail=0, speed=7.66 task/s, eta_s=4071.2
+2026-03-17 17:48:45 [Progress] done=1000/32000, ok=1000, fail=0, speed=8.11 task/s, eta_s=3824.5
+2026-03-17 17:49:04 [Progress] done=1200/32000, ok=1200, fail=0, speed=8.42 task/s, eta_s=3659.9
+2026-03-17 17:49:23 [Progress] done=1400/32000, ok=1400, fail=0, speed=8.67 task/s, eta_s=3530.9
+2026-03-17 17:49:42 [Progress] done=1600/32000, ok=1600, fail=0, speed=8.86 task/s, eta_s=3430.0
+2026-03-17 17:50:00 [Progress] done=1800/32000, ok=1800, fail=0, speed=9.05 task/s, eta_s=3337.9
+2026-03-17 17:50:19 [Chunk] wrote=chunk_000009.npz, size=2000, chunk_id=9
+2026-03-17 17:50:19 [Progress] done=2000/32000, ok=2000, fail=0, speed=9.19 task/s, eta_s=3265.1
+2026-03-17 17:50:38 [Progress] done=2200/32000, ok=2200, fail=0, speed=9.31 task/s, eta_s=3199.8
+2026-03-17 17:50:56 [Progress] done=2400/32000, ok=2400, fail=0, speed=9.42 task/s, eta_s=3140.6
+2026-03-17 17:51:14 [Progress] done=2600/32000, ok=2600, fail=0, speed=9.52 task/s, eta_s=3087.8
+2026-03-17 17:51:33 [Progress] done=2800/32000, ok=2800, fail=0, speed=9.60 task/s, eta_s=3042.7
+2026-03-17 17:51:51 [Progress] done=3000/32000, ok=3000, fail=0, speed=9.67 task/s, eta_s=2997.7
+2026-03-17 17:52:10 [Progress] done=3200/32000, ok=3200, fail=0, speed=9.74 task/s, eta_s=2956.5
+2026-03-17 17:52:28 [Progress] done=3400/32000, ok=3400, fail=0, speed=9.80 task/s, eta_s=2919.7
+2026-03-17 17:52:47 [Progress] done=3600/32000, ok=3600, fail=0, speed=9.85 task/s, eta_s=2884.2
+2026-03-17 17:53:05 [Progress] done=3800/32000, ok=3800, fail=0, speed=9.90 task/s, eta_s=2849.7
+2026-03-17 17:53:24 [Chunk] wrote=chunk_000010.npz, size=2000, chunk_id=10
+2026-03-17 17:53:24 [Progress] done=4000/32000, ok=4000, fail=0, speed=9.94 task/s, eta_s=2817.3
+2026-03-17 17:53:42 [Progress] done=4200/32000, ok=4200, fail=0, speed=9.98 task/s, eta_s=2785.3
+2026-03-17 17:54:01 [Progress] done=4400/32000, ok=4400, fail=0, speed=10.02 task/s, eta_s=2755.8
+2026-03-17 17:54:19 [Progress] done=4600/32000, ok=4600, fail=0, speed=10.05 task/s, eta_s=2726.5
+2026-03-17 17:54:37 [Progress] done=4800/32000, ok=4800, fail=0, speed=10.09 task/s, eta_s=2697.0
+2026-03-17 17:54:56 [Progress] done=5000/32000, ok=5000, fail=0, speed=10.11 task/s, eta_s=2670.2
+2026-03-17 17:55:14 [Progress] done=5200/32000, ok=5200, fail=0, speed=10.14 task/s, eta_s=2644.0
+2026-03-17 17:55:32 [Progress] done=5400/32000, ok=5400, fail=0, speed=10.17 task/s, eta_s=2616.1
+2026-03-17 17:55:51 [Progress] done=5600/32000, ok=5600, fail=0, speed=10.19 task/s, eta_s=2591.2
+2026-03-17 17:56:09 [Progress] done=5800/32000, ok=5800, fail=0, speed=10.21 task/s, eta_s=2566.4
+2026-03-17 17:56:28 [Chunk] wrote=chunk_000011.npz, size=2000, chunk_id=11
+2026-03-17 17:56:28 [Progress] done=6000/32000, ok=6000, fail=0, speed=10.23 task/s, eta_s=2540.9
+2026-03-17 17:56:46 [Progress] done=6200/32000, ok=6200, fail=0, speed=10.25 task/s, eta_s=2516.7
+2026-03-17 17:57:05 [Progress] done=6400/32000, ok=6400, fail=0, speed=10.27 task/s, eta_s=2493.2
+2026-03-17 17:57:23 [Progress] done=6600/32000, ok=6600, fail=0, speed=10.28 task/s, eta_s=2469.6
+2026-03-17 17:57:42 [Progress] done=6800/32000, ok=6800, fail=0, speed=10.30 task/s, eta_s=2446.8
+2026-03-17 17:58:00 [Progress] done=7000/32000, ok=7000, fail=0, speed=10.31 task/s, eta_s=2424.9
+2026-03-17 17:58:18 [Progress] done=7200/32000, ok=7200, fail=0, speed=10.33 task/s, eta_s=2401.1
+2026-03-17 17:58:37 [Progress] done=7400/32000, ok=7400, fail=0, speed=10.34 task/s, eta_s=2378.8
+2026-03-17 17:58:55 [Progress] done=7600/32000, ok=7600, fail=0, speed=10.35 task/s, eta_s=2357.0
+2026-03-17 17:59:14 [Progress] done=7800/32000, ok=7800, fail=0, speed=10.37 task/s, eta_s=2334.2
+2026-03-17 17:59:32 [Chunk] wrote=chunk_000012.npz, size=2000, chunk_id=12
+2026-03-17 17:59:32 [Progress] done=8000/32000, ok=8000, fail=0, speed=10.38 task/s, eta_s=2313.0
+2026-03-17 17:59:51 [Progress] done=8200/32000, ok=8200, fail=0, speed=10.39 task/s, eta_s=2291.3
+2026-03-17 18:00:09 [Progress] done=8400/32000, ok=8400, fail=0, speed=10.40 task/s, eta_s=2269.3
+2026-03-17 18:00:28 [Progress] done=8600/32000, ok=8600, fail=0, speed=10.41 task/s, eta_s=2248.4
+2026-03-17 18:00:46 [Progress] done=8800/32000, ok=8800, fail=0, speed=10.42 task/s, eta_s=2226.9
+2026-03-17 18:01:04 [Progress] done=9000/32000, ok=9000, fail=0, speed=10.43 task/s, eta_s=2204.5
+2026-03-17 18:01:22 [Progress] done=9200/32000, ok=9200, fail=0, speed=10.44 task/s, eta_s=2183.6
+2026-03-17 18:01:41 [Progress] done=9400/32000, ok=9400, fail=0, speed=10.45 task/s, eta_s=2162.6
+2026-03-17 18:01:59 [Progress] done=9600/32000, ok=9600, fail=0, speed=10.46 task/s, eta_s=2141.7
+2026-03-17 18:02:18 [Progress] done=9800/32000, ok=9800, fail=0, speed=10.47 task/s, eta_s=2121.1
+2026-03-17 18:02:36 [Chunk] wrote=chunk_000013.npz, size=2000, chunk_id=13
+2026-03-17 18:02:36 [Progress] done=10000/32000, ok=10000, fail=0, speed=10.47 task/s, eta_s=2100.8
+2026-03-17 18:02:54 [Progress] done=10200/32000, ok=10200, fail=0, speed=10.48 task/s, eta_s=2079.6
+2026-03-17 18:03:13 [Progress] done=10400/32000, ok=10400, fail=0, speed=10.49 task/s, eta_s=2059.0
+2026-03-17 18:03:31 [Progress] done=10600/32000, ok=10600, fail=0, speed=10.50 task/s, eta_s=2038.7
+2026-03-17 18:03:50 [Progress] done=10800/32000, ok=10800, fail=0, speed=10.50 task/s, eta_s=2018.9
+2026-03-17 18:04:09 [Progress] done=11000/32000, ok=11000, fail=0, speed=10.50 task/s, eta_s=1999.3
+2026-03-17 18:04:27 [Progress] done=11200/32000, ok=11200, fail=0, speed=10.51 task/s, eta_s=1979.4
+2026-03-17 18:04:45 [Progress] done=11400/32000, ok=11400, fail=0, speed=10.52 task/s, eta_s=1958.9
+2026-03-17 18:05:04 [Progress] done=11600/32000, ok=11600, fail=0, speed=10.52 task/s, eta_s=1939.2
+2026-03-17 18:05:23 [Progress] done=11800/32000, ok=11800, fail=0, speed=10.52 task/s, eta_s=1919.4
+2026-03-17 18:05:41 [Chunk] wrote=chunk_000014.npz, size=2000, chunk_id=14
+2026-03-17 18:05:41 [Progress] done=12000/32000, ok=12000, fail=0, speed=10.53 task/s, eta_s=1899.6
+2026-03-17 18:05:59 [Progress] done=12200/32000, ok=12200, fail=0, speed=10.53 task/s, eta_s=1879.6
+2026-03-17 18:06:18 [Progress] done=12400/32000, ok=12400, fail=0, speed=10.54 task/s, eta_s=1859.8
+2026-03-17 18:06:36 [Progress] done=12600/32000, ok=12600, fail=0, speed=10.54 task/s, eta_s=1839.8
+2026-03-17 18:06:55 [Progress] done=12800/32000, ok=12800, fail=0, speed=10.55 task/s, eta_s=1820.1
+2026-03-17 18:07:13 [Progress] done=13000/32000, ok=13000, fail=0, speed=10.55 task/s, eta_s=1800.5
+2026-03-17 18:07:31 [Progress] done=13200/32000, ok=13200, fail=0, speed=10.56 task/s, eta_s=1780.4
+2026-03-17 18:07:50 [Progress] done=13400/32000, ok=13400, fail=0, speed=10.56 task/s, eta_s=1761.0
+2026-03-17 18:08:08 [Progress] done=13600/32000, ok=13600, fail=0, speed=10.57 task/s, eta_s=1741.4
+2026-03-17 18:08:27 [Progress] done=13800/32000, ok=13800, fail=0, speed=10.57 task/s, eta_s=1721.5
+2026-03-17 18:08:45 [Chunk] wrote=chunk_000015.npz, size=2000, chunk_id=15
+2026-03-17 18:08:45 [Progress] done=14000/32000, ok=14000, fail=0, speed=10.58 task/s, eta_s=1701.9
+2026-03-17 18:09:03 [Progress] done=14200/32000, ok=14200, fail=0, speed=10.58 task/s, eta_s=1682.2
+2026-03-17 18:09:22 [Progress] done=14400/32000, ok=14400, fail=0, speed=10.59 task/s, eta_s=1662.6
+2026-03-17 18:09:40 [Progress] done=14600/32000, ok=14600, fail=0, speed=10.59 task/s, eta_s=1643.2
+2026-03-17 18:09:59 [Progress] done=14800/32000, ok=14800, fail=0, speed=10.59 task/s, eta_s=1624.0
+2026-03-17 18:10:17 [Progress] done=15000/32000, ok=15000, fail=0, speed=10.60 task/s, eta_s=1604.3
+2026-03-17 18:10:36 [Progress] done=15200/32000, ok=15200, fail=0, speed=10.60 task/s, eta_s=1585.4
+2026-03-17 18:10:54 [Progress] done=15400/32000, ok=15400, fail=0, speed=10.60 task/s, eta_s=1565.9
+2026-03-17 18:11:12 [Progress] done=15600/32000, ok=15600, fail=0, speed=10.61 task/s, eta_s=1546.2
+2026-03-17 18:11:31 [Progress] done=15800/32000, ok=15800, fail=0, speed=10.61 task/s, eta_s=1527.2
+2026-03-17 18:11:49 [Chunk] wrote=chunk_000016.npz, size=2000, chunk_id=16
+2026-03-17 18:11:49 [Progress] done=16000/32000, ok=16000, fail=0, speed=10.61 task/s, eta_s=1508.0
+2026-03-17 18:12:07 [Progress] done=16200/32000, ok=16200, fail=0, speed=10.62 task/s, eta_s=1488.3
+2026-03-17 18:12:26 [Progress] done=16400/32000, ok=16400, fail=0, speed=10.62 task/s, eta_s=1469.3
+2026-03-17 18:12:45 [Progress] done=16600/32000, ok=16600, fail=0, speed=10.62 task/s, eta_s=1450.2
+2026-03-17 18:13:03 [Progress] done=16800/32000, ok=16800, fail=0, speed=10.62 task/s, eta_s=1430.7
+2026-03-17 18:13:21 [Progress] done=17000/32000, ok=17000, fail=0, speed=10.63 task/s, eta_s=1411.5
+2026-03-17 18:13:40 [Progress] done=17200/32000, ok=17200, fail=0, speed=10.63 task/s, eta_s=1392.4
+2026-03-17 18:13:58 [Progress] done=17400/32000, ok=17400, fail=0, speed=10.63 task/s, eta_s=1372.9
+2026-03-17 18:14:16 [Progress] done=17600/32000, ok=17600, fail=0, speed=10.63 task/s, eta_s=1354.0
+2026-03-17 18:14:35 [Progress] done=17800/32000, ok=17800, fail=0, speed=10.64 task/s, eta_s=1335.0
+2026-03-17 18:14:53 [Chunk] wrote=chunk_000017.npz, size=2000, chunk_id=17
+2026-03-17 18:14:53 [Progress] done=18000/32000, ok=18000, fail=0, speed=10.64 task/s, eta_s=1315.8
+2026-03-17 18:15:12 [Progress] done=18200/32000, ok=18200, fail=0, speed=10.64 task/s, eta_s=1297.1
+2026-03-17 18:15:33 [Progress] done=18400/32000, ok=18400, fail=0, speed=10.63 task/s, eta_s=1279.8
+2026-03-17 18:15:56 [Progress] done=18600/32000, ok=18600, fail=0, speed=10.60 task/s, eta_s=1263.8
+2026-03-17 18:16:18 [Progress] done=18800/32000, ok=18800, fail=0, speed=10.58 task/s, eta_s=1247.7
+2026-03-17 18:16:39 [Progress] done=19000/32000, ok=19000, fail=0, speed=10.57 task/s, eta_s=1230.1
+2026-03-17 18:16:59 [Progress] done=19200/32000, ok=19200, fail=0, speed=10.56 task/s, eta_s=1211.6
+2026-03-17 18:17:19 [Progress] done=19400/32000, ok=19400, fail=0, speed=10.56 task/s, eta_s=1193.5
+2026-03-17 18:17:39 [Progress] done=19600/32000, ok=19600, fail=0, speed=10.55 task/s, eta_s=1175.3
+2026-03-17 18:17:59 [Progress] done=19800/32000, ok=19800, fail=0, speed=10.54 task/s, eta_s=1157.0
+2026-03-17 18:18:19 [Chunk] wrote=chunk_000018.npz, size=2000, chunk_id=18
+2026-03-17 18:18:19 [Progress] done=20000/32000, ok=20000, fail=0, speed=10.54 task/s, eta_s=1138.7
+2026-03-17 18:18:39 [Progress] done=20200/32000, ok=20200, fail=0, speed=10.53 task/s, eta_s=1120.2
+2026-03-17 18:18:59 [Progress] done=20400/32000, ok=20400, fail=0, speed=10.53 task/s, eta_s=1101.8
+2026-03-17 18:19:19 [Progress] done=20600/32000, ok=20600, fail=0, speed=10.52 task/s, eta_s=1083.5
+2026-03-17 18:19:40 [Progress] done=20800/32000, ok=20800, fail=0, speed=10.51 task/s, eta_s=1065.5
+2026-03-17 18:20:00 [Progress] done=21000/32000, ok=21000, fail=0, speed=10.51 task/s, eta_s=1046.9
+2026-03-17 18:20:20 [Progress] done=21200/32000, ok=21200, fail=0, speed=10.50 task/s, eta_s=1028.4
+2026-03-17 18:20:41 [Progress] done=21400/32000, ok=21400, fail=0, speed=10.49 task/s, eta_s=1010.4
+2026-03-17 18:21:01 [Progress] done=21600/32000, ok=21600, fail=0, speed=10.49 task/s, eta_s=991.8
+2026-03-17 18:21:21 [Progress] done=21800/32000, ok=21800, fail=0, speed=10.48 task/s, eta_s=973.2
+2026-03-17 18:21:42 [Chunk] wrote=chunk_000019.npz, size=2000, chunk_id=19
+2026-03-17 18:21:43 [Progress] done=22000/32000, ok=22000, fail=0, speed=10.47 task/s, eta_s=955.1
+2026-03-17 18:22:02 [Progress] done=22200/32000, ok=22200, fail=0, speed=10.47 task/s, eta_s=936.2
+2026-03-17 18:22:22 [Progress] done=22400/32000, ok=22400, fail=0, speed=10.46 task/s, eta_s=917.4
+2026-03-17 18:22:42 [Progress] done=22600/32000, ok=22600, fail=0, speed=10.46 task/s, eta_s=898.5
+2026-03-17 18:23:01 [Progress] done=22800/32000, ok=22800, fail=0, speed=10.46 task/s, eta_s=879.5
+2026-03-17 18:23:21 [Progress] done=23000/32000, ok=23000, fail=0, speed=10.46 task/s, eta_s=860.6
+2026-03-17 18:23:41 [Progress] done=23200/32000, ok=23200, fail=0, speed=10.45 task/s, eta_s=842.1
+2026-03-17 18:24:01 [Progress] done=23400/32000, ok=23400, fail=0, speed=10.45 task/s, eta_s=823.2
+2026-03-17 18:24:21 [Progress] done=23600/32000, ok=23600, fail=0, speed=10.44 task/s, eta_s=804.3
+2026-03-17 18:24:42 [Progress] done=23800/32000, ok=23800, fail=0, speed=10.44 task/s, eta_s=785.7
+2026-03-17 18:25:03 [Chunk] wrote=chunk_000020.npz, size=2000, chunk_id=20
+2026-03-17 18:25:03 [Progress] done=24000/32000, ok=24000, fail=0, speed=10.43 task/s, eta_s=767.2
+2026-03-17 18:25:24 [Progress] done=24200/32000, ok=24200, fail=0, speed=10.42 task/s, eta_s=748.6
+2026-03-17 18:25:44 [Progress] done=24400/32000, ok=24400, fail=0, speed=10.41 task/s, eta_s=729.8
+2026-03-17 18:26:05 [Progress] done=24600/32000, ok=24600, fail=0, speed=10.41 task/s, eta_s=710.9
+2026-03-17 18:26:25 [Progress] done=24800/32000, ok=24800, fail=0, speed=10.41 task/s, eta_s=692.0
+2026-03-17 18:26:45 [Progress] done=25000/32000, ok=25000, fail=0, speed=10.40 task/s, eta_s=673.0
+2026-03-17 18:27:04 [Progress] done=25200/32000, ok=25200, fail=0, speed=10.40 task/s, eta_s=653.8
+2026-03-17 18:27:25 [Progress] done=25400/32000, ok=25400, fail=0, speed=10.40 task/s, eta_s=634.9
+2026-03-17 18:27:45 [Progress] done=25600/32000, ok=25600, fail=0, speed=10.39 task/s, eta_s=615.9
+2026-03-17 18:28:05 [Progress] done=25800/32000, ok=25800, fail=0, speed=10.39 task/s, eta_s=596.8
+2026-03-17 18:28:25 [Chunk] wrote=chunk_000021.npz, size=2000, chunk_id=21
+2026-03-17 18:28:25 [Progress] done=26000/32000, ok=26000, fail=0, speed=10.38 task/s, eta_s=577.8
+2026-03-17 18:28:47 [Progress] done=26200/32000, ok=26200, fail=0, speed=10.37 task/s, eta_s=559.1
+2026-03-17 18:29:08 [Progress] done=26400/32000, ok=26400, fail=0, speed=10.37 task/s, eta_s=540.1
+2026-03-17 18:29:28 [Progress] done=26600/32000, ok=26600, fail=0, speed=10.36 task/s, eta_s=521.1
+2026-03-17 18:29:50 [Progress] done=26800/32000, ok=26800, fail=0, speed=10.35 task/s, eta_s=502.2
+2026-03-17 18:30:10 [Progress] done=27000/32000, ok=27000, fail=0, speed=10.35 task/s, eta_s=483.2
+2026-03-17 18:30:32 [Progress] done=27200/32000, ok=27200, fail=0, speed=10.34 task/s, eta_s=464.2
+2026-03-17 18:30:52 [Progress] done=27400/32000, ok=27400, fail=0, speed=10.34 task/s, eta_s=445.0
+2026-03-17 18:31:12 [Progress] done=27600/32000, ok=27600, fail=0, speed=10.33 task/s, eta_s=425.8
+2026-03-17 18:31:33 [Progress] done=27800/32000, ok=27800, fail=0, speed=10.33 task/s, eta_s=406.7
+2026-03-17 18:31:54 [Chunk] wrote=chunk_000022.npz, size=2000, chunk_id=22
+2026-03-17 18:31:54 [Progress] done=28000/32000, ok=28000, fail=0, speed=10.32 task/s, eta_s=387.6
+2026-03-17 18:32:15 [Progress] done=28200/32000, ok=28200, fail=0, speed=10.32 task/s, eta_s=368.3
+2026-03-17 18:32:35 [Progress] done=28400/32000, ok=28400, fail=0, speed=10.31 task/s, eta_s=349.1
+2026-03-17 18:32:56 [Progress] done=28600/32000, ok=28600, fail=0, speed=10.31 task/s, eta_s=329.8
+2026-03-17 18:33:15 [Progress] done=28800/32000, ok=28800, fail=0, speed=10.31 task/s, eta_s=310.5
+2026-03-17 18:33:36 [Progress] done=29000/32000, ok=29000, fail=0, speed=10.30 task/s, eta_s=291.1
+2026-03-17 18:33:56 [Progress] done=29200/32000, ok=29200, fail=0, speed=10.30 task/s, eta_s=271.8
+2026-03-17 18:34:15 [Progress] done=29400/32000, ok=29400, fail=0, speed=10.30 task/s, eta_s=252.4
+2026-03-17 18:34:36 [Progress] done=29600/32000, ok=29600, fail=0, speed=10.30 task/s, eta_s=233.1
+2026-03-17 18:34:56 [Progress] done=29800/32000, ok=29800, fail=0, speed=10.29 task/s, eta_s=213.7
+2026-03-17 18:35:17 [Chunk] wrote=chunk_000023.npz, size=2000, chunk_id=23
+2026-03-17 18:35:17 [Progress] done=30000/32000, ok=30000, fail=0, speed=10.29 task/s, eta_s=194.4
+2026-03-17 18:35:37 [Progress] done=30200/32000, ok=30200, fail=0, speed=10.29 task/s, eta_s=175.0
+2026-03-17 18:35:55 [Progress] done=30400/32000, ok=30400, fail=0, speed=10.29 task/s, eta_s=155.5
+2026-03-17 18:36:13 [Progress] done=30600/32000, ok=30600, fail=0, speed=10.30 task/s, eta_s=136.0
+2026-03-17 18:36:32 [Progress] done=30800/32000, ok=30800, fail=0, speed=10.30 task/s, eta_s=116.5
+2026-03-17 18:36:50 [Progress] done=31000/32000, ok=31000, fail=0, speed=10.30 task/s, eta_s=97.1
+2026-03-17 18:37:08 [Progress] done=31200/32000, ok=31200, fail=0, speed=10.31 task/s, eta_s=77.6
+2026-03-17 18:37:27 [Progress] done=31400/32000, ok=31400, fail=0, speed=10.31 task/s, eta_s=58.2
+2026-03-17 18:37:45 [Progress] done=31600/32000, ok=31600, fail=0, speed=10.31 task/s, eta_s=38.8
+2026-03-17 18:38:03 [Progress] done=31800/32000, ok=31800, fail=0, speed=10.32 task/s, eta_s=19.4
+2026-03-17 18:38:22 [Chunk] wrote=chunk_000024.npz, size=2000, chunk_id=24
+2026-03-17 18:38:22 [Progress] done=32000/32000, ok=32000, fail=0, speed=10.32 task/s, eta_s=0.0
+2026-03-17 18:38:22 [Done] mode=ray, total=32000, ok=32000, fail=0, elapsed_s=3101.03

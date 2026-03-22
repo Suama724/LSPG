@@ -1,0 +1,4 @@
+使用数据集
+100D bbob
+X_n_sampling_num 600
+Per_func_instance_num 600
