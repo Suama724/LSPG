@@ -1,0 +1,17 @@
+{
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.typeCheckingMode": "off",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "constant.numeric",
+                "settings": { "foreground": "#ed6ac6",}
+            },
+            {
+                "scope": "string.quoted.docstring.multi.python",
+                "settings": {
+                    "foreground": "#F5A9B8",}
+            },
+        ]
+    },
+}
